@@ -1,0 +1,25 @@
+Floor Plan Measurements
+======================
+
+External Walls:
+Wall 1: 11.82 meters
+Wall 2: 5.86 meters
+Wall 3: 11.80 meters
+Wall 4: 5.76 meters
+Total External Perimeter: 35.24 meters
+
+Internal Walls:
+Wall 1: 10.26 meters
+Wall 2: 4.72 meters
+Wall 3: 4.66 meters
+Wall 4: 10.34 meters
+Total Internal Length: 29.98 meters
+
+Total Wall Length: 65.22 meters
+
+
+
+=== Measurement Results ===
+External Perimeter: 18.86 meters
+Total Internal Girth: 16.64 meters
+Combined Total: 35.50 meters
