@@ -96,7 +96,7 @@ def export_boq_xlsx(project: Project, boq_data: dict) -> bytes:
         ("DOCUMENT TYPE", "Firm Elemental Bill of Quantities"),
         ("CURRENCY", f"{boq_data.get('currency', 'NGN')} ({currency_sym})"),
         ("ROUNDING CONVENTION", "BESMM4 Rule 1.5.3 (Tonnes: 2 dp; Others: Nearest whole unit)" if boq_data.get("rounding_rule") == "besmm4_whole" else "Standard (2 Decimal Places)"),
-        ("ENGINE / GENERATOR", "AutoPlan AI Taking-Off & Measurement Engine v2.0"),
+        ("ENGINE / GENERATOR", "PlanToBOQ AI Taking-Off & Measurement Engine v2.0"),
     ]
 
     start_r = 7

@@ -1,5 +1,5 @@
 @echo off
-echo Starting AutoPlan Backend API...
+echo Starting PlanToBOQ Backend API...
 cd /d "%~dp0backend"
 call .venv\Scripts\activate.bat
 python -m uvicorn app.main:app --reload --port 8000

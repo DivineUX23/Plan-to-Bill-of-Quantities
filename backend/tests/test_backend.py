@@ -1,4 +1,4 @@
-"""Automated tests for AutoPlan Taking-off Engine.
+"""Automated tests for PlanToBOQ Taking-off Engine.
 
 Verifies:
 1. Geometry calculations (centre-line conversion, occupied bodies, T/L/cross deductions).

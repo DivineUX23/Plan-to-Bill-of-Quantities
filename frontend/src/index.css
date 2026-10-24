@@ -1,4 +1,4 @@
-/* AutoPlan Core Design System - Sleek, Precision Engineering Aesthetic */
+/* PlanToBOQ Core Design System - Sleek, Precision Engineering Aesthetic */
 :root {
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -47,7 +47,8 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   font-family: var(--font-sans);
@@ -71,25 +72,34 @@ html, body {
   width: 6px;
   height: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--border-medium);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }
 
 /* Typography Helpers */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   color: var(--text-main);
   letter-spacing: -0.015em;
 }
 
-code, pre {
+code,
+pre {
   font-family: var(--font-mono);
 }
 
@@ -121,6 +131,7 @@ code, pre {
   color: white;
   box-shadow: 0 1px 2px rgba(37, 99, 235, 0.2);
 }
+
 .btn-primary:hover:not(:disabled) {
   background-color: var(--primary-hover);
   box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
@@ -132,6 +143,7 @@ code, pre {
   border-color: var(--border-light);
   box-shadow: var(--shadow-sm);
 }
+
 .btn-secondary:hover:not(:disabled) {
   background-color: var(--bg-surface-alt);
   border-color: var(--border-medium);
@@ -142,6 +154,7 @@ code, pre {
   color: white;
   border-color: var(--border-dark);
 }
+
 .btn-dark:hover:not(:disabled) {
   background-color: #334155;
 }
@@ -150,6 +163,7 @@ code, pre {
   background: transparent;
   color: var(--text-muted);
 }
+
 .btn-ghost:hover:not(:disabled) {
   background-color: rgba(0, 0, 0, 0.05);
   color: var(--text-main);
@@ -160,6 +174,7 @@ code, pre {
   color: #DC2626;
   border-color: #FECACA;
 }
+
 .btn-danger:hover:not(:disabled) {
   background-color: #FCA5A5;
 }
@@ -177,7 +192,9 @@ code, pre {
 }
 
 /* Input Fields */
-.input, .select, .textarea {
+.input,
+.select,
+.textarea {
   width: 100%;
   font-family: var(--font-sans);
   font-size: 13px;
@@ -190,7 +207,9 @@ code, pre {
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.input:focus, .select:focus, .textarea:focus {
+.input:focus,
+.select:focus,
+.textarea:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
@@ -254,8 +273,15 @@ code, pre {
 }
 
 @keyframes modalPop {
-  0% { transform: scale(0.96); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .modal-header {

@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: autoplan-api
+    name: plantoboq-api
     runtime: python
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
@@ -9,7 +9,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: autoplan-db
+          name: plantoboq-db
           property: connectionString
       - key: CORS_ORIGINS
         value: "https://*.vercel.app,http://localhost:5173,http://localhost:3000"
@@ -19,5 +19,5 @@ services:
         value: "40"
 
 databases:
-  - name: autoplan-db
+  - name: plantoboq-db
     plan: free

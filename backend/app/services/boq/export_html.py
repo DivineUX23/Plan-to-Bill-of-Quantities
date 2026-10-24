@@ -277,12 +277,12 @@ def export_boq_html(project: Project, boq_data: dict) -> str:
             </tr>
             <tr>
                 <td style="font-weight: 700; color: #475569;">Taking-Off Engine:</td>
-                <td>AutoPlan AI Measurement Suite v2.0</td>
+                <td>PlanToBOQ AI Measurement Suite v2.0</td>
             </tr>
         </table>
 
         <div style="margin-top: 40px; font-size: 10px; color: #94A3B8;">
-            AutoPlan Production Taking-off & Measurement Engine • All rights reserved.
+            PlanToBOQ Production Taking-off & Measurement Engine • All rights reserved.
         </div>
     </div>
 

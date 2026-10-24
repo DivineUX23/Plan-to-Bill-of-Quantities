@@ -9,13 +9,13 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
-    app_name: str = "AutoPlan API"
+    app_name: str = "PlanToBOQ API"
     environment: str = "development"
 
     # Database. Render supplies `postgres://...`; we normalise it for SQLAlchemy + psycopg3.
-    database_url: str = "sqlite:///./autoplan.db"
+    database_url: str = "sqlite:///./plantoboq.db"
 
-    # Comma-separated list of allowed origins, e.g. "https://autoplan.vercel.app,http://localhost:5173"
+    # Comma-separated list of allowed origins, e.g. "https://plantoboq.vercel.app,http://localhost:5173"
     cors_origins: str = "http://localhost:5173,http://127.0.0.1:5173"
     # Optional regex for preview and production deployments, e.g. any Vercel domain
     cors_origin_regex: str | None = r"^https:\/\/.*\.vercel\.app$"

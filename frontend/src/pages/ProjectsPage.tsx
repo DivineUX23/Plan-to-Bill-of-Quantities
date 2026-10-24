@@ -114,7 +114,7 @@ export const ProjectsPage: React.FC = () => {
           </div>
           <div>
             <h1 style={{ fontSize: '20px', fontWeight: 800, letterSpacing: '-0.02em', color: '#F8FAFC' }}>
-              AutoPlan
+              PlanToBOQ
             </h1>
             <p style={{ fontSize: '12px', color: '#94A3B8' }}>
               Production Architectural Taking-Off & Measurement Engine
@@ -372,7 +372,7 @@ export const ProjectsPage: React.FC = () => {
                     backgroundColor: 'var(--bg-app)',
                     cursor: 'pointer',
                   }}
-                  onClick={() => document.getElementById('file-upload-input')?.click()}
+                    onClick={() => document.getElementById('file-upload-input')?.click()}
                   >
                     <input
                       id="file-upload-input"

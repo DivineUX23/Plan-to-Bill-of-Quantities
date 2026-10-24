@@ -1,4 +1,4 @@
-"""FastAPI application entrypoint for AutoPlan API."""
+"""FastAPI application entrypoint for PlanToBOQ API."""
 
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
@@ -25,7 +25,7 @@ settings = get_settings()
 app = FastAPI(
     title=settings.app_name,
     version="1.0.0",
-    description="AutoPlan Taking-off Engine API for architectural floor plans and BESMM4 bills of quantities.",
+    description="PlanToBOQ Taking-off Engine API for architectural floor plans and BESMM4 bills of quantities.",
     lifespan=lifespan,
 )
 

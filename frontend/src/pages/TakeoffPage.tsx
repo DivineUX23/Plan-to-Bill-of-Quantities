@@ -101,7 +101,7 @@ export const TakeoffPage: React.FC = () => {
         color: '#F8FAFC',
         fontSize: '15px',
       }}>
-        Loading AutoPlan Taking-off Studio...
+        Loading PlanToBOQ Taking-off Studio...
       </div>
     );
   }
@@ -113,7 +113,7 @@ export const TakeoffPage: React.FC = () => {
         <Navbar
           project={project}
           currentSheet={null}
-          onSelectSheet={() => {}}
+          onSelectSheet={() => { }}
           onOpenSpecs={() => setShowSpecsModal(true)}
         />
         <div style={{

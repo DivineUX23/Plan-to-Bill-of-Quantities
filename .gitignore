@@ -27,8 +27,8 @@ yarn-error.log*
 *.db
 *.sqlite
 *.sqlite3
-autoplan.db
-backend/autoplan.db
+plantoboq.db
+backend/plantoboq.db
 
 # OS & IDE
 .DS_Store
