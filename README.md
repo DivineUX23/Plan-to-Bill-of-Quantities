@@ -1,5 +1,8 @@
 # PlanToBOQ: Intelligent Architectural Taking-Off & BESMM4 BOQ Engine
 
+[![Live App](https://img.shields.io/badge/Live%20App-Vercel-success?style=flat&logo=vercel)](https://plan-to-bill-of-quantities.vercel.app/)
+[![API Status](https://img.shields.io/badge/API%20Live-Render-46E3B7?style=flat&logo=render)](https://plantoboq-api.onrender.com/health)
+[![Swagger Docs](https://img.shields.io/badge/Swagger%20Docs-FastAPI-009688?style=flat&logo=fastapi)](https://plantoboq-api.onrender.com/docs)
 [![CI Tests](https://img.shields.io/badge/tests-8%20passed-success)](backend/tests)
 [![Python](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688.svg)](https://fastapi.tiangolo.com/)
@@ -11,19 +14,41 @@
 
 ---
 
+> 🚀 **Live Production Deployments:**
+> - **Live Web Studio (Vercel)**: [https://plan-to-bill-of-quantities.vercel.app/](https://plan-to-bill-of-quantities.vercel.app/)
+> - **Live REST API (Render)**: [https://plantoboq-api.onrender.com/](https://plantoboq-api.onrender.com/)
+> - **Interactive Swagger Docs**: [https://plantoboq-api.onrender.com/docs](https://plantoboq-api.onrender.com/docs)
+> - **Health Check**: [https://plantoboq-api.onrender.com/health](https://plantoboq-api.onrender.com/health)
+
+---
+
 ## Table of Contents
 
+- [Live Deployments & Endpoints](#live-deployments--endpoints)
 - [Overview & The Problem It Solves](#overview--the-problem-it-solves)
 - [System Architecture](#system-architecture)
 - [Key Features](#key-features)
 - [Engineering Highlights & Technical Rigor](#engineering-highlights--technical-rigor)
-- [Live Demo & Screenshots](#live-demo--screenshots)
 - [Step-by-Step User Guide](#step-by-step-user-guide)
 - [Local Setup & Quickstart](#local-setup--quickstart)
 - [Automated Testing](#automated-testing)
 - [Cloud Deployment (Render + Vercel)](#cloud-deployment-render--vercel)
 - [Contributing Guidelines](#contributing-guidelines)
 - [License](#license)
+
+---
+
+## Live Deployments & Endpoints
+
+| Resource | Service | URL | Description |
+| :--- | :--- | :--- | :--- |
+| **Web Application** | Vercel | [`plan-to-bill-of-quantities.vercel.app`](https://plan-to-bill-of-quantities.vercel.app/) | Interactive Taking-Off Studio & BESMM4 BOQ Suite |
+| **REST API Root** | Render | [`plantoboq-api.onrender.com`](https://plantoboq-api.onrender.com/) | FastAPI backend web service |
+| **Interactive API Docs** | Swagger UI | [`plantoboq-api.onrender.com/docs`](https://plantoboq-api.onrender.com/docs) | Interactive API playground & schema definitions |
+| **ReDoc Documentation** | ReDoc | [`plantoboq-api.onrender.com/redoc`](https://plantoboq-api.onrender.com/redoc) | Alternate structured API documentation |
+| **API Health Check** | JSON | [`plantoboq-api.onrender.com/health`](https://plantoboq-api.onrender.com/health) | Uptime monitoring & status probe |
+| **BESMM4 Clause Reference** | JSON | [`plantoboq-api.onrender.com/api/besmm4/reference?code=1.14:2.1.1`](https://plantoboq-api.onrender.com/api/besmm4/reference?code=1.14:2.1.1) | Dynamic classification & page lookup |
+| **BESMM4 PDF Stream** | Application/PDF | [`plantoboq-api.onrender.com/api/besmm4/pdf`](https://plantoboq-api.onrender.com/api/besmm4/pdf) | In-browser streaming of 509-page NIQS standard |
 
 ---
 
@@ -139,7 +164,7 @@ This repository was designed with production software engineering standards:
 ## Step-by-Step User Guide
 
 ### 1. Create a Project
-1. Open the dashboard at `http://localhost:5173` (or live Vercel URL).
+1. Open the dashboard at [https://plan-to-bill-of-quantities.vercel.app/](https://plan-to-bill-of-quantities.vercel.app/) (or `http://localhost:5173` locally).
 2. Click **Create Project**, enter the Project Name (e.g. *3-Bedroom Executive Bungalow*), Client Name, and Site Location.
 
 ### 2. Upload and Calibrate Drawing
@@ -252,22 +277,30 @@ npm run build
 
 ## Cloud Deployment (Render + Vercel)
 
-PlanToBOQ is architected for cloud deployment with zero configuration drift:
+PlanToBOQ is deployed and running live:
+* **Frontend**: [https://plan-to-bill-of-quantities.vercel.app/](https://plan-to-bill-of-quantities.vercel.app/)
+* **Backend**: [https://plantoboq-api.onrender.com/](https://plantoboq-api.onrender.com/)
 
-### Backend Deployment (Render)
-1. Push repository to GitHub.
-2. In [Render Dashboard](https://dashboard.render.com), create a **New Blueprint** and select this repo.
-3. Render reads [`render.yaml`](render.yaml) and provisions:
-   * **PlanToBOQ-api** (FastAPI Web Service)
-   * **PlanToBOQ-db** (Managed PostgreSQL Database)
-4. Copy the public backend URL (`https://PlanToBOQ-api.onrender.com`).
+### Production Configuration
 
-### Frontend Deployment (Vercel)
-1. In [Vercel Dashboard](https://vercel.com), click **Add New Project** $\rightarrow$ import this repo.
-2. Set **Root Directory** to `frontend`.
-3. Add Environment Variable:
-   * `VITE_API_URL`: Your Render backend URL (e.g. `https://PlanToBOQ-api.onrender.com`).
-4. Click **Deploy**. Client-side routing is handled by [`frontend/vercel.json`](frontend/vercel.json).
+1. **Backend on Render**:
+   * Uses [`render.yaml`](render.yaml) infrastructure specification.
+   * Root Directory: `backend`
+   * Build Command: `pip install -r requirements.txt`
+   * Start Command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+   * Environment Variables:
+     * `CORS_ORIGIN_REGEX`: `^https://.*\.vercel\.app$`
+     * `CORS_ORIGINS`: `https://plan-to-bill-of-quantities.vercel.app,http://localhost:5173`
+     * `DATABASE_URL`: Managed PostgreSQL connection string (auto-normalized to `postgresql+psycopg://`).
+
+2. **Frontend on Vercel**:
+   * Framework: `Vite`
+   * Root Directory: `frontend`
+   * Build Command: `npm run build`
+   * Output Directory: `dist`
+   * Environment Variable:
+     * `VITE_API_URL`: `https://plantoboq-api.onrender.com`
+   * SPA client-side routing rewrites configured via [`frontend/vercel.json`](frontend/vercel.json).
 
 ---
 
